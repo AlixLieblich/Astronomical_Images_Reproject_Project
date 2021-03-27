@@ -1,5 +1,7 @@
 ## 🔭 Reprojecting Astronomical Images! 🌠
 
+Astronomical image projection is oUt oF thIs wOrLd
+
 ###  👽 Overview
 
 In Spring 2020, for Observation Astronomy (ASTR 301), my classmates and I were given a semester long project of processing and reprojecting astronomical images. Reprojecting image makes use of the `reproject` package by Thomas Robitaille (a man who writes a lot of helpful code for Astropy that I used in my undergrad). Reprojecting by difinition means re-gridding of images throuhg interpolation such as changing the pixel resolution, orientation, and coordinate system.  
@@ -60,11 +62,11 @@ In Spring 2020, for Observation Astronomy (ASTR 301), my classmates and I were g
 
 ### 📚 Outcome
 
-- This is a repojection.
+- Below is a repojection.
 
 ![Image of reproject](reproject.png)
 
-- This is a deepfield image that has been processed! Screenshot taken of image processed via the code in this repo and viewed in the software ds9.
+- Below is a deepfield image that has been processed! Screenshot taken of image processed via the code in this repo and viewed in the software ds9.
 
 ![Image of deepfield](deepfield.png)
 
