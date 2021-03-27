@@ -10,19 +10,22 @@ In Spring 2020, for Observation Astronomy (ASTR 301), my classmates and I were g
 
 ### 🌌 Data
 
-- Astronomical images from UH Tek Telescope
+- Astronomical images from UH88 Telescope atop Mauna Kea.
 
 ### 🌜 How this works!
 
 - The first step is to apply bias and overscan and trim the images, as done in `trim_overscan_bias.py`. The data taken in can be viewed in the folder 'UH88 Tek RAW DATA' directory. The output can be viewed in the 'Final median-combined Bias, Dome Flats, and Sky Flats' directory.
 
-These three images, from left to right, are the final dome flats in r, z, and i filter respectively. Note that the donut rings are dust on the telescope lens.
+- The three images below, from left to right, are the final dome flats in r, z, and i filter respectively. Note that the donut rings are dust on the telescope lens.
+
 ![Image of dome flats](domeFlats.png)
 
-These three images, from left to right, are the final sky flats in r', z', and i' filter respectively. Note that the star pattern is an effect of the lens opening for a very short exposure (caused by light having more time to saturate the center than the outside edges.)
+- The three images below, from left to right, are the final sky flats in r', z', and i' filter respectively. Note that the star pattern is an effect of the lens opening for a very short exposure (caused by light having more time to saturate the center than the outside edges.)
+
 ![Image of sky flats](skyFlats.png)
 
-These three images, from left to right, are the final filtered flats in r', z', and i' filter respectively.
+- The three images below, from left to right, are the final filtered flats in r', z', and i' filter respectively.
+
 ![Image of filtered flats](filteredFlats.png)
 
 - The next step was to solve and apply WCS (world coordinate system) and reproject using `reproject.py`. WCS corrected images can be found in 'Final WCS-corrected, combined r, i, z images of NEP5281'. Note, see deepfield below for a visual outcome of reproject.
@@ -57,12 +60,14 @@ These three images, from left to right, are the final filtered flats in r', z', 
 
 ### 📚 Outcome
 
-This is a repojection.
+- This is a repojection.
+
 ![Image of reproject](reproject.png)
 
-This is a deepfield image that has been processed! Screenshot taken of image processed via the code in this repo and viewed in the software ds9.
+- This is a deepfield image that has been processed! Screenshot taken of image processed via the code in this repo and viewed in the software ds9.
+
 ![Image of deepfield](deepfield.png)
 
-### 📔 The README I turned in with the project:
+### 📔 The README submitted from original project:
 
 The beginning steps of the project were to trim and overscan correct images which was done via python in spyder. I used ccdproc to calculate the overscan to subtract from the pixel values and trim off the overscan. Next I created the median bias which was subtracted from the rest of the objects. After this, I created my sky flats and dome flats by creating filters and applying them to the images, creating the master bias flats. All of these were applied to the images in all of the filters. Fits files and code were uploaded to **Final median-combined Bias, Dome Flats, and Sky Flats folder**. Next was to solve and apply WCS which I did by using the 5 images in each filter. WCS, or world coordinate system, is used to make sure the headers are proper for images so that you know where in the sky things are. I used one fits file (0) as a reference for the header. The rest were reprojected using reproject_interp. Using arrays and footprints, the images were all reprojected. Then, the NaNs were fixed in an output file using fits.writeto. The reprojected images were then written to new files where I then combined all of them using ccdproc.combine. These steps were done for all three filters, then finally I combined all three master combine files for a deep field image. Note, in code is “print(“hello”) and print(“goodbye”)”. These were for my own personal reference to see where the code was at while it was running, and I decided to leave it in the code for a visualization of my process. Fits files, code used, and image created in ds9 uploaded to **Final WCS-corrected, combined r, i, z images of NEP5281 folder**. To run SExtractor, I downloaded the necessary files from the Google drive. I ran into numerous issues with this, as the software itself was hard to download and then I couldn’t understand what I had to do with it when I had it. I was able to figure it out with the help of the TA’s and multiple peers in class. With a helpful email from Caroline, I was able to run SExtractor using a config file on my files and get configuration files, checkimages files, and catalogs out. **Config file parameters were chosen by** examining what changed when they were adjusted. Back_size was reduced to give a more finely grained sample. Deblend_mincont was increased to help SExtractor not separate objects from their parts, such as a diffraction spike. Detect_minera was kept the same because increasing it gave too few sources and decreasing it gave too many sources. Note that only a single config file was used for all three filters. Catalogs uploaded to **Final SExtractor catalogs in r, i, z for NEP5281 folder**. Config file and checkimages uploaded to **SExtractor configuration files and the checkimages folder**. This was very exciting as I had been very frustrated throughout the process. Finally, the line fitting process, including calibration plots, zp and c calculations were done using the code provided by Miles Lucas. Code with plots uploaded to **Plots folder**. Note that all folder names (and parameters for SExtractor blurb) are bolded in this doc to give more guidance on the overall organization of my project. 
